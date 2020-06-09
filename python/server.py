@@ -3,9 +3,14 @@ George Whitfield
 gwhitfie@andrew.cmu.edu
 June 9, 2020
 
-server.py - server for the attention task
+server.py - server for the attention task.
 
-Users of the attention task will connect to this server from the attention task
+How to use this file:
+
+    python3 server.py
+
+    This will create a server that runs forever until a CTRL + C signal is 
+    received.
 '''
 
 import socketserver
