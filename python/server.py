@@ -36,6 +36,11 @@ class AttentionTaskServer(socketserver.BaseRequestHandler):
         self.request.sendall(self.data.upper())
         return
 
+'''
+1) creates a server on localhost and port 9999
+2) reads the data that is sent to the sevrer
+3) sends the same data back to the client, but uppercased
+'''
 def main():
     if __name__ == "__main__":
         HOST, PORT = "localhost", 9999
