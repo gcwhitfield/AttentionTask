@@ -17,3 +17,8 @@ tasks completed
 6. At the end of the task, child sends info to server and server sends info to a secure
 database.
 
+## File descriptions
+* python - contains server for attention task and test code
+* unity-files - WebGL build from Unity
+* index.html - html for the attention task website
+* css - css files for attention task website

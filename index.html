@@ -25,9 +25,19 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Unity stuff -->
+    <link rel="shortcut icon" href="unity-files/TemplateData/favicon.ico">
+    <link rel="stylesheet" href="unity-files/TemplateData/style.css">
+    <script src="unity-files/TemplateData/UnityProgress.js"></script>
+    <script src="unity-files/Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "unity-files/Build/attention task build 7.json", {onProgress: UnityProgress});
+    </script>
+
 </head>
 
-<nav class = "navbar navbar-expand-lg navbar-light bg-light">
+<nav class = "navbar navbar-expand-lg navbar-light bg-light ">
     <a class="navbar-brand" href="#" style="text-align:center;">Attention Task</a>
     <div class="collapse navbar-collapse" id = "navbarNav">
         <ul class="navbar-nav">
@@ -40,6 +50,13 @@
 
 <body>
     <script src="js/scripts.js"></script>
-    <h1 style="text-align:center;">Attention Task</h1>
+    <div class="webgl-content">
+      <div id="unityContainer" style="width: 1024px; height: 768px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+        <div class="title">Attention Task</div>
+      </div>
+    </div>
 </body>
 </html>
