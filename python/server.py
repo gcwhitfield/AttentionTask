@@ -14,6 +14,7 @@ How to use this file:
 '''
 
 import socketserver
+import string
 
 # starter code is copied from the python documentation about socketserver
 # https://docs.python.org/3/library/socketserver.html
@@ -27,16 +28,24 @@ class AttentionTaskServer(socketserver.BaseRequestHandler):
     client.
     """
     def handle(self):
-        print("yay i'm handling the connectoin :)")
+        print("yay i'm handling the connection :)")
+        self.data = self.request.recv(1024).strip()
+        print(f"{self.client_address[0]} wrote: {self.data}")
+
+        # send back the same data, but all uppsercased
+        self.request.sendall(self.data.upper())
         return
 
 def main():
     if __name__ == "__main__":
         HOST, PORT = "localhost", 9999
         # connect the server to localhost on port 9999
+        print("Creating server on host {HOST} and port {PORT}.")
         with socketserver.TCPServer((HOST,PORT), AttentionTaskServer) as server:
             # server will run forever until someone hits CTRL + C
+            print("Serving forever...")
             server.serve_forever()
+        print("Server killed.")
     return
 
 main()
