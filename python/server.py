@@ -78,7 +78,7 @@ class AttentionTaskServer(socketserver.BaseRequestHandler):
 2) reads the data that is sent to the sevrer
 3) sends the same data back to the client, but uppercased
 '''
-def main_old():
+def main_socket():
     if __name__ == "__main__":
         HOST, PORT = "localhost", 9999
         # connect the server to localhost on port 9999
@@ -109,7 +109,9 @@ async def server(websocket, path):
     response = msg.upper()
     await websocket.send(response) 
 
-def main():
+def main_websocket():
     start_server = websockets.serve(server, "localhost", 1234)
     asyncio.get_event_loop().run_until_complete(start_server)
     asyncio.get_event_loop().run_forever()
+
+main_websocket()
