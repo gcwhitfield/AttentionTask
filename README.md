@@ -32,4 +32,4 @@ I'm using `pipenv` to manage my python virtual environment. You need to install 
 
 ## Running the code inside of the virtual environment.
 1. Move into the AttentionTask/python folder and type `pipenv shell`. This will activate the environment. Now you should be able to run the python scripts in AttentionTask/python
-2. To exit the environment, type `quit`
+2. To exit the environment, type `exit`
